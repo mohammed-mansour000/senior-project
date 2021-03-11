@@ -1,0 +1,22 @@
+<h2 class="text-center text-md-left" style="font-weight: bolder; color: rgb(56, 56, 56);">
+    BROADCASTS & FUNDS
+</h2>
+<ngx-slick-carousel class="carousel card-deck slick-initialized slick-slider">
+    <div class="slick-list draggable">
+        <div class="slick-track">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide p-sm-3 slick-slide slick-cloned" style="width: 320px;">
+                <div class="text-center card" style="border: none !important;">
+                    <div>
+                        <a href="">
+                            <img src="assets/humanServices.jpg" class=" ng-lazyloading"
+                                style="max-width: 100%; border-radius: 10px; border: solid 1px #6f6f6f;" alt="">
+                        </a>
+                    </div>
+                    <div class="text-center mt-2">
+                        <a href="" class="btn btn-sm btn-warning text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ngx-slick-carousel>
