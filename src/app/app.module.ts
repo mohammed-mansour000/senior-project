@@ -13,6 +13,8 @@ import { LatestNewsComponent } from './components/dashboard/latest-news/latest-n
 import { SponsorsComponent } from './components/dashboard/sponsors/sponsors.component';
 import { LatestContributionsComponent } from './components/dashboard/latest-contributions/latest-contributions.component';
 import { HomeComponent } from './components/home/home.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HomeComponent } from './components/home/home.component';
     LatestNewsComponent,
     SponsorsComponent,
     LatestContributionsComponent,
-    HomeComponent
+    HomeComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
