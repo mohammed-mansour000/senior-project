@@ -3,7 +3,7 @@
     EVENTS & COMPETITIONS
 </h2>
 
-<ngx-slick-carousel class="carousel card-deck mx-5  slick-slider"
+<!-- <ngx-slick-carousel class="carousel card-deck mx-5  slick-slider"
                         #slickModal="slick-carousel" 
                         [config]="slideConfig"
                         (init)="slickInit($event)"
@@ -32,30 +32,68 @@
                 </div>
             </div>
         </div>        
-      <!--   <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-            <img src="{{ slide.img }}" alt="" width="100%">
-            </div>
-        -->
 
         <img src="assets/next.png" (click)="prev()"
             style="padding-bottom: 40px; height: 80px; width: 40px;"
                 class="a-right control-c next slick-next slick-arrow">
-</ngx-slick-carousel><!-- 
-<ngx-slick-carousel class="carousel" 
-#slickModal="slick-carousel" 
-[config]="slideConfig" 
-(init)="slickInit($event)"
-(breakpoint)="breakpoint($event)"
-(afterChange)="afterChange($event)"
-(beforeChange)="beforeChange($event)">
-<div ngxSlickItem *ngFor="let slide of slides" class="slide">
-<img src="{{ slide.img }}" alt="" width="100%">
-</div>
-</ngx-slick-carousel>
+</ngx-slick-carousel> -->
 
-<button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button>
-<button (click)="prev()">prev</button>
-<button (click)="next()">next</button> -->
+<div id="bootstrapCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Slide Indicators -->
+   
+
+    <!-- The slides to show -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="text-center card" style="border: none !important;">
+            <div class="card-body h-100">
+                <h6>any text any text any text any text</h6>
+                <div class="text-center" style="font-size: 17px; margin-top: 8px;">
+                    <div style="color: #6f6f6f; font-size: 14px;">any date</div>
+                    <div>
+                        <a href="" class="btn btn-warning btn-sm mt-2 text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="text-center card" style="border: none !important;">
+            <div class="card-body h-100">
+                <h6>any text any text any text any text</h6>
+                <div class="text-center" style="font-size: 17px; margin-top: 8px;">
+                    <div style="color: #6f6f6f; font-size: 14px;">any date</div>
+                    <div>
+                        <a href="" class="btn btn-warning btn-sm mt-2 text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="text-center card" style="border: none !important;">
+            <div class="card-body h-100">
+                <h6>any text any text any text any text</h6>
+                <div class="text-center" style="font-size: 17px; margin-top: 8px;">
+                    <div style="color: #6f6f6f; font-size: 14px;">any date</div>
+                    <div>
+                        <a href="" class="btn btn-warning btn-sm mt-2 text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Controls (Left and right) -->
+    <a class="carousel-control-prev" href="#bootstrapCarousel" data-slide="prev">
+      <img src="assets/prev.png"
+      style="padding-bottom: 40px; height: 80px; width: 40px;"
+          class="carousel-control-prev-icon">
+    </a>
+    <a class="carousel-control-next" href="#bootstrapCarousel" data-slide="next">
+      <img src="assets/next.png"
+            style="padding-bottom: 40px; height: 80px; width: 40px;"
+                class="carousel-control-next-icon">
+    </a>
+</div>
