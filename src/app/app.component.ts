@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'senior';
-  isLogged = false;
+  isLoggedIn = false;
 }
+
+
