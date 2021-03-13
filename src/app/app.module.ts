@@ -12,6 +12,7 @@ import { LatestBroadcastsComponent } from './components/dashboard/latest-broadca
 import { LatestNewsComponent } from './components/dashboard/latest-news/latest-news.component';
 import { SponsorsComponent } from './components/dashboard/sponsors/sponsors.component';
 import { LatestContributionsComponent } from './components/dashboard/latest-contributions/latest-contributions.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LatestContributionsComponent } from './components/dashboard/latest-cont
     LatestBroadcastsComponent,
     LatestNewsComponent,
     SponsorsComponent,
-    LatestContributionsComponent
+    LatestContributionsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

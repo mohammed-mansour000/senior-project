@@ -33,13 +33,25 @@
         <a href="" class="dropdown-item" type="button">
           Logout
         </a>
+        <div class="dropdown-divider">
+
+        </div>
+        <a href="" class="dropdown-item" type="button">
+          Sign in
+        </a>
+        <div class="dropdown-divider">
+
+        </div>
+        <a href="" class="dropdown-item" type="button">
+          Sign Up
+        </a>
       </div>
     </div>
   </div>
 </nav>
 
 <!-- menu -->
-<nav class="navbar navbar-expand navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light bg-light" *ngIf="isLoggedIn">
   <ul class="navbar-nav font-weight-bold">
     <li class="nav-item active">
       <a  [routerLink]="['/dashboard']" class="nav-link" >
@@ -77,11 +89,7 @@
   </ul>
 </nav>
 
-<app-dashboard></app-dashboard>
+<router-outlet></router-outlet>
 
 
-test from mansour LAPTOP
-jrb kmn test hoon shoof bmshi 
-
-jrb kmn test hoon shoof bmshi 
 
