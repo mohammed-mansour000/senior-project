@@ -2,7 +2,7 @@
   <a href="" class="navbar-brand">
     <img src="assets/iec_logo_white_web.png" height="60px" alt="">
   </a>
-  <div class="dropdown">
+  <div class="dropdown" *ngIf="isLogged">
     <span class="mr-2 font-weight-bold d-none d-sm-inline" style="vertical-align: middle;">
       user name
     </span>
@@ -39,7 +39,7 @@
 </nav>
 
 <!-- menu -->
-<nav class="navbar navbar-expand navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light bg-light" *ngIf="isLogged">
   <ul class="navbar-nav font-weight-bold">
     <li class="nav-item active">
       <a  [routerLink]="['/dashboard']" class="nav-link" >
@@ -77,11 +77,5 @@
   </ul>
 </nav>
 
-<app-dashboard></app-dashboard>
-
-
-test from mansour LAPTOP
-jrb kmn test hoon shoof bmshi 
-
-jrb kmn test hoon shoof bmshi 
+<router-outlet></router-outlet>
 
