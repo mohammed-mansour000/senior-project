@@ -17,6 +17,10 @@ import { HomeComponent } from './components/home/home.component';
 
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { ProjectsComponent } from './components/projects/projects/projects.component';
+import { CreateComponent } from './components/projects/create/create.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,17 @@ import { SignupComponent } from './components/auth/signup/signup.component';
     LatestContributionsComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProjectsComponent,
+    CreateComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

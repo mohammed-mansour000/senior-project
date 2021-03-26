@@ -1,3 +1,4 @@
+<!-- start navbar -->
 <nav class="navbar mb-0">
   <a href="" class="navbar-brand">
     <img src="assets/iec_logo_white_web.png" height="60px" alt="">
@@ -50,45 +51,14 @@
   </div>
 </nav>
 
-<!-- menu -->
+<!-- end  navbar -->
 
-<nav class="navbar navbar-expand navbar-light bg-light" >
-  <ul class="navbar-nav font-weight-bold">
-    <li class="nav-item active">
-      <a  [routerLink]="['/dashboard']" class="nav-link" >
-        Home
-      </a>
-    </li>
-    <li class="nav-item">
-      <a  [routerLink]="['/dashboard']" class="nav-link" >
-        Projects
-      </a>
-    </li>
-    <li class="nav-item">
-      <a  [routerLink]="['/dashboard']" class="nav-link" >
-        Contributions
-      </a>
-    </li>
-    <li class="nav-item">
-      <a  [routerLink]="['/dashboard']" class="nav-link" >
-        Market
-      </a>
-    </li>
-    <li class="nav-item dropdown">
-      <a  class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbardrop"  aria-expanded="false">
-        Employment
-      </a>
-      <div class="dropdown-menu">
-        <a  [routerLink]="['/dashboard']" class="dropdown-item" >
-          Job
-        </a>
-        <a  [routerLink]="['/dashboard']" class="dropdown-item" >
-          Interships
-        </a>
-      </div>
-    </li>
-  </ul>
-</nav>
+
+<!-- start menu -->
+
+<app-menu></app-menu>
+
+<!-- end menu -->
 
 <router-outlet></router-outlet>
 
