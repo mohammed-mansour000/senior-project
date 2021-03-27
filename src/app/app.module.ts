@@ -21,6 +21,9 @@ import { ProjectsComponent } from './components/projects/projects/projects.compo
 import { CreateComponent } from './components/projects/create/create.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectComponent } from './components/projects/project/project.component';
+import { ProjectAboutComponent } from './components/projects/project-about/project-about.component';
+import { ProjectNeedsComponent } from './components/projects/project-needs/project-needs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     ProjectsComponent,
     CreateComponent,
-    MenuComponent
+    MenuComponent,
+    ProjectComponent,
+    ProjectAboutComponent,
+    ProjectNeedsComponent
   ],
   imports: [
     BrowserModule,
