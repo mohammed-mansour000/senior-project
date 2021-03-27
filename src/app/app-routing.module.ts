@@ -1,3 +1,6 @@
+import { ProjectComponent } from './components/projects/project/project.component';
+import { ProjectNeedsComponent } from './components/projects/project-needs/project-needs.component';
+import { ProjectAboutComponent } from './components/projects/project-about/project-about.component';
 import { ProjectsComponent } from './components/projects/projects/projects.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -15,6 +18,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'create', component: CreateComponent},
+  {path: 'projects/:id/about', component: ProjectAboutComponent},
+  {path: 'projects/:id/needs', component: ProjectNeedsComponent},
 ];
 
 @NgModule({
