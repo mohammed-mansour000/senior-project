@@ -1,3 +1,9 @@
+import { ProjectModule } from './components/projects/project.module';
+import { EditNeedComponent } from './components/projects/edit-need/edit-need.component';
+import { NeedMatchesComponent } from './components/projects/need-matches/need-matches.component';
+import { NeedComponent } from './components/projects/need/need.component';
+import { EditProjectComponent } from './components/projects/edit-project/edit-project.component';
+import { NeedsComponent } from './components/projects/needs/needs.component';
 import { ProjectComponent } from './components/projects/project/project.component';
 import { ProjectNeedsComponent } from './components/projects/project-needs/project-needs.component';
 import { ProjectAboutComponent } from './components/projects/project-about/project-about.component';
@@ -9,6 +15,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { CreateComponent } from './components/projects/create/create.component';
+import { NeedAddComponent } from './components/projects/need-add/need-add.component';
+import { NeedAboutComponent } from './components/projects/need-about/need-about.component';
 
 const routes: Routes = [
   // {path:"", redirectTo: "/dashboard", pathMatch: "full"},
@@ -16,10 +24,9 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'projects', component: ProjectsComponent},
-  {path: 'create', component: CreateComponent},
-  {path: 'projects/:id/about', component: ProjectAboutComponent},
-  {path: 'projects/:id/needs', component: ProjectNeedsComponent},
+  { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule) },
+  
+  {path: '**', component: DashboardComponent}
 ];
 
 @NgModule({

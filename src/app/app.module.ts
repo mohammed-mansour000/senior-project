@@ -17,13 +17,11 @@ import { HomeComponent } from './components/home/home.component';
 
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { ProjectsComponent } from './components/projects/projects/projects.component';
-import { CreateComponent } from './components/projects/create/create.component';
+
 import { MenuComponent } from './shared/menu/menu.component';
-import { FormsModule } from '@angular/forms';
-import { ProjectComponent } from './components/projects/project/project.component';
-import { ProjectAboutComponent } from './components/projects/project-about/project-about.component';
-import { ProjectNeedsComponent } from './components/projects/project-needs/project-needs.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ProjectModule } from './components/projects/project.module';
 
 @NgModule({
   declarations: [
@@ -38,19 +36,18 @@ import { ProjectNeedsComponent } from './components/projects/project-needs/proje
     HomeComponent,
     SigninComponent,
     SignupComponent,
-    ProjectsComponent,
-    CreateComponent,
+  
     MenuComponent,
-    ProjectComponent,
-    ProjectAboutComponent,
-    ProjectNeedsComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     SlickCarouselModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

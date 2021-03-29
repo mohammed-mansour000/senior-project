@@ -3,9 +3,9 @@
         <div _ngcontent-wii-c63="" class="col-12 mx-auto">
 
             <h3 _ngcontent-omv-c63="" class="text-center text-dark pb-3"><img _ngcontent-omv-c63=""
-                    src="./../../../assets/project.png" height="40" alt="project" class="mr-2"
+                    src="assets/project.png" height="40" alt="project" class="mr-2"
                     style="vertical-align: middle; padding-bottom: 3px;"><span _ngcontent-omv-c63=""
-                    style="vertical-align: middle;">Test <button _ngcontent-omv-c63="" routerlink="edit"
+                    style="vertical-align: middle;">Project Name <button _ngcontent-omv-c63="" routerLink="edit"
                         class="btn btn-warning btn-sm mb-1 ml-1" style="border-radius: 100%; color: white;"
                         tabindex="0"><i _ngcontent-omv-c63="" class="fas fa-pen"></i></button>
                     <button _ngcontent-omv-c63="" class="btn btn-dark btn-sm mb-1 ml-1" style="border-radius: 100%;"><i
@@ -20,13 +20,15 @@
 
             <ul _ngcontent-wii-c63="" id="myTab" role="tablist" class="nav nav-tabs">
                 <li _ngcontent-wii-c63="" class="nav-item"><a _ngcontent-wii-c63="" id="about-tab" data-toggle="tab"
-                        routerlink="about" role="tab" aria-controls="about" aria-selected="true"
+                    [routerLink]="['/projects/55/about']" role="tab" aria-controls="about" aria-selected="true"
                         class="nav-link text-dark active" href="/projects/55/about">About</a></li>
                 <li _ngcontent-wii-c63="" class="nav-item"><a _ngcontent-wii-c63="" id="needs-tab" data-toggle="tab"
-                        routerlink="needs" role="tab" aria-controls="needs" aria-selected="false"
+                        [routerLink]="['/projects/55/needs']"   role="tab" aria-controls="needs" aria-selected="false"
                         class="nav-link text-dark" href="/projects/55/needs">Needs</a></li>
             </ul>
            <!-- <app-project-needs></app-project-needs> -->
+           <router-outlet></router-outlet>
+           
         </div>
     </div>
 </div>
