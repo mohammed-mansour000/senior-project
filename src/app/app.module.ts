@@ -21,7 +21,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ProjectModule } from './components/projects/project.module';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { ProjectModule } from './components/projects/project.module';
     HomeComponent,
     SigninComponent,
     SignupComponent,
-  
     MenuComponent,
     
   ],
