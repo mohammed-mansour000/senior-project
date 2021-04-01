@@ -1,17 +1,23 @@
-<div _ngcontent-vqd-c67="" class="my-3">
-    <div _ngcontent-vqd-c67="" class="jumbotron text-center" *ngIf="forTest">
-        <h4 _ngcontent-vqd-c67="" class="mb-4"> You didn't add any need to this project yet </h4>
-        <p _ngcontent-vqd-c67=""><button _ngcontent-vqd-c67="" routerLink="add"
-                class="btn btn-lg btn-warning text-white" tabindex="0"><i _ngcontent-vqd-c67=""
-                    class="fas fa-plus-circle"></i> Add Need </button></p>
+<div class="container my-5">
+    <h1 class="header-title text-center text-dark pb-3 mb-" >
+        <img src="assets/contribution.png" style="vertical-align: middle;" class="mr-2" height="55" alt="project">
+        <span style="vertical-align: middle;">
+            My Contributions
+            <a routerLink="contribute"   style="border-radius: 100%; color: white;" class="btn btn-warning btn-sm mb-1 ml-1">
+                <i class="fas fa-plus"></i>
+            </a>
+        </span>
+    </h1>
+    <div class="jumbotron text-center">
+        <h4 class="mb-4"> You don't have any Contributions yet </h4>
+        <p>
+            <button routerLink="contribute" tabindex="0" class="btn btn-lg btn-warning text-white">
+                <i class="fas fa-plus-circle"></i>
+                Create Contribution
+            </button>
+        </p>
     </div>
-    <p>
-        <button class="btn btn-warning text-white" routerLink="add">
-            <i class="fas fa-plus-circle"></i>
-            Add Need
-        </button>
-    </p>
-    <!-- my needs -->
+    <!-- my contributions -->
     <div class="container-data mb-5">
         <div class="container-box mb-3">
             <div class="p-3 bg-dark mb-2" style="border-radius: 10px;">
@@ -22,7 +28,7 @@
                 </div>
                 <h4>
                     <a [routerLink]="[55,'about']"   style="color: rgb(242, 184, 71);">
-                        any need name
+                        any contribution name
                     </a>
                 </h4>
                 <p style="color: #fff; text-align: justify;">

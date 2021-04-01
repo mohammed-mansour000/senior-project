@@ -14,9 +14,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { CreateComponent } from './components/projects/create/create.component';
-import { NeedAddComponent } from './components/projects/need-add/need-add.component';
-import { NeedAboutComponent } from './components/projects/need-about/need-about.component';
+
 
 const routes: Routes = [
   // {path:"", redirectTo: "/dashboard", pathMatch: "full"},
@@ -25,7 +23,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule) },
-  
+  { path: 'contributions', loadChildren: () => import('./components/contributions/contribution.module').then(m => m.ContributionModule) },
   {path: '**', component: DashboardComponent}
 ];
 
