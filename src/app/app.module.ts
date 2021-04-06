@@ -20,6 +20,15 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 
 import { MenuComponent } from './shared/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MarketComponent } from './components/market/market/market.component';
+import { MarketAddComponent } from './components/market/market-add/market-add.component';
+import { AboutMarketComponent } from './components/market/about-market/about-market.component';
+import { JobsComponent } from './components/employment/jobs/jobs/jobs.component';
+import { JobAddComponent } from './components/employment/jobs/job-add/job-add.component';
+import { AboutJobComponent } from './components/employment/jobs/about-job/about-job.component';
+import { AboutInternshipComponent } from './components/employment/internships/about-internship/about-internship.component';
+import { InternshipAddComponent } from './components/employment/internships/internship-add/internship-add.component';
+import { InternshipsComponent } from './components/employment/internships/internships/internships.component';
 
 
 
@@ -37,6 +46,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SigninComponent,
     SignupComponent,
     MenuComponent,
+    MarketComponent,
+    MarketAddComponent,
+    AboutMarketComponent,
+    JobsComponent,
+    JobAddComponent,
+    AboutJobComponent,
+    AboutInternshipComponent,
+    InternshipAddComponent,
+    InternshipsComponent,
     
   ],
   imports: [
