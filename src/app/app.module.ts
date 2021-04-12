@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,11 @@ import { AboutJobComponent } from './components/employment/jobs/about-job/about-
 import { AboutInternshipComponent } from './components/employment/internships/about-internship/about-internship.component';
 import { InternshipAddComponent } from './components/employment/internships/internship-add/internship-add.component';
 import { InternshipsComponent } from './components/employment/internships/internships/internships.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AboutComponent } from './shared/about/about.component';
+import { TermsComponent } from './shared/terms/terms.component';
+import { OurPartnersComponent } from './shared/our-partners/our-partners.component';
+import { ContactComponent } from './shared/contact/contact.component';
 
 
 
@@ -55,6 +61,11 @@ import { InternshipsComponent } from './components/employment/internships/intern
     AboutInternshipComponent,
     InternshipAddComponent,
     InternshipsComponent,
+    FooterComponent,
+    AboutComponent,
+    TermsComponent,
+    OurPartnersComponent,
+    ContactComponent,
     
   ],
   imports: [
@@ -63,7 +74,8 @@ import { InternshipsComponent } from './components/employment/internships/intern
     NgbModule,
     SlickCarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [],

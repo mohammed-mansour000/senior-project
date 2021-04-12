@@ -1,3 +1,7 @@
+import { TermsComponent } from './shared/terms/terms.component';
+import { OurPartnersComponent } from './shared/our-partners/our-partners.component';
+import { ContactComponent } from './shared/contact/contact.component';
+import { AboutComponent } from './shared/about/about.component';
 import { AboutInternshipComponent } from './components/employment/internships/about-internship/about-internship.component';
 import { InternshipAddComponent } from './components/employment/internships/internship-add/internship-add.component';
 import { AboutJobComponent } from './components/employment/jobs/about-job/about-job.component';
@@ -32,6 +36,10 @@ const routes: Routes = [
   {path: 'internships/:internshipId/about', component: AboutInternshipComponent},
   { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule) },
   { path: 'contributions', loadChildren: () => import('./components/contributions/contribution.module').then(m => m.ContributionModule) },
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'our-partners', component: OurPartnersComponent},
+  {path: 'terms', component: TermsComponent},
   {path: '**', component: DashboardComponent}
 ];
 

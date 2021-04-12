@@ -44,10 +44,23 @@
 
     <!-- The slides to show -->
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item "  *ngFor="let event of events" [ngClass]="{'active': event.id === 1}" >
+        <div class="text-center card" *ngIf="event" style="border: none !important;">
+            <div class="card-body h-100">
+                <h6>{{event.title}}</h6>
+                <div class="text-center" style="font-size: 17px; margin-top: 8px;">
+                    <div style="color: #6f6f6f; font-size: 14px;">{{event.fromto}}</div>
+                    <div>
+                        <a href="{{event.url}}" target="_blank" class="btn btn-warning btn-sm mt-2 text-white">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- <div class="carousel-item ">
         <div class="text-center card" style="border: none !important;">
             <div class="card-body h-100">
-                <h6>any text any text any text any text</h6>
+                <h6>any text2 any text2 any text2 any text2</h6>
                 <div class="text-center" style="font-size: 17px; margin-top: 8px;">
                     <div style="color: #6f6f6f; font-size: 14px;">any date</div>
                     <div>
@@ -56,11 +69,11 @@
                 </div>
             </div>
         </div>
-      </div>
-      <div class="carousel-item">
+      </div> -->
+      <!-- <div class="carousel-item ">
         <div class="text-center card" style="border: none !important;">
             <div class="card-body h-100">
-                <h6>any text any text any text any text</h6>
+                <h6>any text3 any text3 any text3 any text3</h6>
                 <div class="text-center" style="font-size: 17px; margin-top: 8px;">
                     <div style="color: #6f6f6f; font-size: 14px;">any date</div>
                     <div>
@@ -69,20 +82,7 @@
                 </div>
             </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="text-center card" style="border: none !important;">
-            <div class="card-body h-100">
-                <h6>any text any text any text any text</h6>
-                <div class="text-center" style="font-size: 17px; margin-top: 8px;">
-                    <div style="color: #6f6f6f; font-size: 14px;">any date</div>
-                    <div>
-                        <a href="" class="btn btn-warning btn-sm mt-2 text-white">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
+      </div> -->
     </div>
 
     <!--  Controls (Left and right) -->
@@ -97,3 +97,5 @@
                 class="carousel-control-next-icon">
     </a>
 </div>
+
+
