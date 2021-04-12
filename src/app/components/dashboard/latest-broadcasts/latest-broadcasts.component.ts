@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { Broadcast } from 'src/app/models/broadcast';
+import { BroadcastService } from 'src/app/services/broadcast.service';
 
 @Component({
   selector: 'app-latest-broadcasts',
@@ -10,10 +12,27 @@ export class LatestBroadcastsComponent implements OnInit {
   
   @ViewChild('slickModal') slickModal: SlickCarouselComponent;
 
-  constructor() { }
+  broadcasts : Broadcast[] = [];
+
+  constructor(private broadcastService: BroadcastService) { }
 
   ngOnInit(): void {
+    this.getBroadcasts();
   }
+
+  getBroadcasts(){
+    this.broadcastService.getBroadcasts().subscribe((res:Broadcast[]) => {
+      
+      this.broadcasts = res;
+      console.log(this.broadcasts)
+    },
+    err => {console.log(err);}
+    );
+  }
+  
+
+
+
   slides = [
     {img: "http://placehold.it/350x150/000000"},
     {img: "http://placehold.it/350x150/111111"},
@@ -21,33 +40,15 @@ export class LatestBroadcastsComponent implements OnInit {
     {img: "http://placehold.it/350x150/666666"}
   ];
 
-  slideConfig = { autoplay: true, slidesToShow: 2, slidesToScroll: 1};
-
-  
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
-  }
-  
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
-  }
-  
-  slickInit(e) {
-    console.log('slick initialized');
-  }
-  
-  breakpoint(e) {
-    console.log('breakpoint');
-  }
-  
-  afterChange(e) {
-    console.log('afterChange');
-  }
-  
-  beforeChange(e) {
-    console.log('beforeChange');
-  }
-
+  slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    //dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1500
+};
+  //slideConfig = {autoplay: true, slidesToShow: 3, slidesToScroll: 1, speed:800, autoplaySpeed: 5000, cssEase: 'cubic-bezier(0.250,  0.060, 0.050, 0.040)'};
 
 
 }

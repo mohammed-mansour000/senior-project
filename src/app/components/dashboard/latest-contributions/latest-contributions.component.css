@@ -13,7 +13,7 @@ ngb-carousel {
     height: inherit;
 }
 
-.carousel-inner {
+/* .carousel-inner {
     overflow: visible;
 }
 
@@ -41,7 +41,7 @@ ngb-carousel {
 
 .carousel-indicators{
     z-index: 20;
-}
+} */
 
 
 @media (min-width: 992px){
