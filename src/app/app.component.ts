@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'senior';
   isLoggedIn = false;
+
+  constructor(private authService: AuthService, private router : Router) {
+    this.authService.afAuth.authState.subscribe(user => {
+      console.log(user)
+      if(user){
+        this.isLoggedIn = true;
+      }
+    })
+   }
+
+  signout(){
+    this.authService.signout().then((result) => {
+      this.router.navigate(['/signin']);
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
 }
 
 

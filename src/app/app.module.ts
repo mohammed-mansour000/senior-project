@@ -36,6 +36,11 @@ import { TermsComponent } from './shared/terms/terms.component';
 import { OurPartnersComponent } from './shared/our-partners/our-partners.component';
 import { ContactComponent } from './shared/contact/contact.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -75,7 +80,11 @@ import { ContactComponent } from './shared/contact/contact.component';
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
     
   ],
   providers: [],

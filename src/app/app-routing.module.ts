@@ -17,25 +17,26 @@ import { Routes, RouterModule } from '@angular/router';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { InternshipsComponent } from './components/employment/internships/internships/internships.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   // {path:"", redirectTo: "/dashboard", pathMatch: "full"},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: '', component: HomeComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'market', component: MarketComponent},
-  {path: 'market/add', component: MarketAddComponent},
-  {path: 'market/:marketId/about', component: AboutMarketComponent},
-  {path: 'jobs', component: JobsComponent},
-  {path: 'jobs/add', component: JobAddComponent},
-  {path: 'jobs/:jobId/about', component: AboutJobComponent},
-  {path: 'internships', component: InternshipsComponent},
-  {path: 'internships/add', component: InternshipAddComponent},
-  {path: 'internships/:internshipId/about', component: AboutInternshipComponent},
-  { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule) },
-  { path: 'contributions', loadChildren: () => import('./components/contributions/contribution.module').then(m => m.ContributionModule) },
+  {path: 'market', component: MarketComponent, canActivate: [AuthGuard] },
+  {path: 'market/add', component: MarketAddComponent, canActivate: [AuthGuard] },
+  {path: 'market/:marketId/about', component: AboutMarketComponent, canActivate: [AuthGuard] },
+  {path: 'jobs', component: JobsComponent, canActivate: [AuthGuard] },
+  {path: 'jobs/add', component: JobAddComponent, canActivate: [AuthGuard] },
+  {path: 'jobs/:jobId/about', component: AboutJobComponent, canActivate: [AuthGuard] },
+  {path: 'internships', component: InternshipsComponent, canActivate: [AuthGuard] },
+  {path: 'internships/add', component: InternshipAddComponent, canActivate: [AuthGuard] },
+  {path: 'internships/:internshipId/about', component: AboutInternshipComponent, canActivate: [AuthGuard] },
+  { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule), canActivate: [AuthGuard] },
+  { path: 'contributions', loadChildren: () => import('./components/contributions/contribution.module').then(m => m.ContributionModule), canActivate: [AuthGuard] },
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'our-partners', component: OurPartnersComponent},
