@@ -1,49 +1,71 @@
-<div _ngcontent-gah-c51="" class="container my-5">
-    <div _ngcontent-gah-c51="" class="row">
-        <div _ngcontent-gah-c51="" class="col-lg-10 col-xl-8 mx-auto">
-            <h1 _ngcontent-gah-c51="" class="header-title text-center text-dark pb-3 mb-3"><img _ngcontent-gah-c51=""
-                    src="./../../../assets/signup.png" height="55" alt="" class="mr-2"
-                    style="vertical-align: middle;"><span _ngcontent-gah-c51="" style="vertical-align: middle;">Sign
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-10 col-xl-8 mx-auto">
+            <h1 class="header-title text-center text-dark pb-3 mb-3"><img src="assets/signup.png" height="55" alt=""
+                    class="mr-2" style="vertical-align: middle;"><span style="vertical-align: middle;">Sign
                     Up</span></h1>
-            <div _ngcontent-gah-c51="">
+            <div>
                 <!---->
                 <!---->
-                <form _ngcontent-gah-c51="" novalidate="" class="mb-2 ng-untouched ng-pristine ng-invalid">
-                    <div _ngcontent-gah-c51="" class="form-group mb-3"><label _ngcontent-gah-c51="" for="email"
-                            class="font-weight-bold mb-1">Email</label><sup _ngcontent-gah-c51=""><i
-                                _ngcontent-gah-c51="" class="fas fa-asterisk text-danger"></i></sup><input
-                            _ngcontent-gah-c51="" id="email" type="email" formcontrolname="email"
-                            placeholder="Enter your email" required="" maxlength="64" onpaste="return false;"
+                <form novalidate class="mb-2 ng-untouched ng-pristine ng-invalid" #f="ngForm">
+                    <div class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="font-weight-bold mb-1">
+                            Email
+                        </label>
+                        <sup>
+                            <i class="fas fa-asterisk text-danger"></i>
+                        </sup>
+                        <input id="email" type="email" ngModel name="email" #email="ngModel"
+                            placeholder="Enter your email" required maxlength="64" onpaste="return false;"
                             class="form-control ng-untouched ng-pristine ng-invalid">
+                        <small class="text-danger" *ngIf="email.invalid && email.touched">email is required</small>
                         <!---->
                     </div>
-                    <div _ngcontent-gah-c51="" class="form-group mb-3"><label _ngcontent-gah-c51="" for="password"
-                            class="font-weight-bold">Password</label><sup _ngcontent-gah-c51=""><i _ngcontent-gah-c51=""
-                                class="fas fa-asterisk text-danger"></i></sup><input _ngcontent-gah-c51="" id="password"
-                            type="password" formcontrolname="password" required="" placeholder="Enter a password"
-                            maxlength="24" onpaste="return false;"
+                    <div class="form-group mb-3">
+                        <label for="password" class="font-weight-bold">
+                            Password
+                        </label>
+                        <sup></sup>
+                        <i class="fas fa-asterisk text-danger"></i>
+                        <input id="password" type="password" ngModel name="password" #password="ngModel" required
+                            placeholder="Enter a password" maxlength="24" onpaste="return false;"
                             class="form-control ng-untouched ng-pristine ng-invalid">
+                        <small class="text-danger" *ngIf="password.invalid && password.touched">
+                            password is required
+                        </small>
+                        <small class="text-danger" *ngIf="password.touched && password.value.length < 6" >
+                            <div *ngIf="password.value.length > 0">password should be between 6 and 24 characters</div>
+                        </small>
                         <!---->
                     </div>
                     <!---->
-                    <div _ngcontent-gah-c51="" class="form-group mb-3"><label _ngcontent-gah-c51=""
-                            for="confirmPassword" class="font-weight-bold">Confirm Password</label><sup
-                            _ngcontent-gah-c51=""><i _ngcontent-gah-c51=""
-                                class="fas fa-asterisk text-danger"></i></sup><input _ngcontent-gah-c51=""
-                            id="confirmPassword" type="password" formcontrolname="confirmPassword" required=""
+                    <div class="form-group mb-3">
+                        <label for="confirmPassword" class="font-weight-bold">
+                            Confirm Password
+                        </label><sup>
+                            <i class="fas fa-asterisk text-danger"></i></sup>
+                        <input id="confirmPassword" type="password" ngModel name="confirm_password" #confirmPassword="ngModel" required
                             placeholder="Re-type same password" maxlength="24" onpaste="return false;"
                             class="form-control ng-untouched ng-pristine ng-invalid">
+                           <!--  <small class="text-danger" *ngIf="confirmPassword.invalid && confirmPassword.touched">confirm your password </small> -->
+                            <small class="text-danger" *ngIf="confirmPassword.value != password.value && confirmPassword.touched">password doesn't match</small>
                         <!---->
                     </div>
-                    <!----><button _ngcontent-gah-c51="" type="submit" class="btn btn-dark w-100" disabled=""> Sign Up
-                        with Email </button>
+                        <button type="submit" class="btn btn-dark w-100"  (click)="signup(f.value)" [disabled]="f.invalid || password.value!=confirmPassword.value">
+                            Sign Up
+                            with Email 
+                        </button>
                     <!---->
                 </form>
-                <div _ngcontent-gah-c51="">
-                    <h5 _ngcontent-gah-c51="" class="text-center text-dark my-4"> OR </h5>
+                <div>
+                    <h5 class="text-center text-dark my-4"> OR </h5>
                     <!---->
-                    <div _ngcontent-gah-c51="" class="formGroup"><button _ngcontent-gah-c51="" type="button"
-                            class="btn googleBtn w-100"> Sign Up with Google </button></div>
+                    <div class="formGroup">
+                        <button type="button" class="btn googleBtn w-100" (click)="googleSignUp()">
+                            Sign Up with Google
+                        </button>
+                    </div>
                 </div>
             </div>
             <!---->
