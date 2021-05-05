@@ -1,3 +1,5 @@
+import { EditPriviligeComponent } from './components/privilige/edit-privilige/edit-privilige.component';
+import { AddPriviligeComponent } from './components/privilige/add-privilige/add-privilige.component';
 import { TermsComponent } from './shared/terms/terms.component';
 import { OurPartnersComponent } from './shared/our-partners/our-partners.component';
 import { ContactComponent } from './shared/contact/contact.component';
@@ -18,12 +20,14 @@ import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { InternshipsComponent } from './components/employment/internships/internships/internships.component';
 import { AuthGuard } from './guards/auth.guard';
+import { PriviligesComponent } from './components/privilige/priviliges/priviliges.component';
 
 
 const routes: Routes = [
   // {path:"", redirectTo: "/dashboard", pathMatch: "full"},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: '', component: HomeComponent},
+  //{path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'market', component: MarketComponent, canActivate: [AuthGuard] },
@@ -37,11 +41,13 @@ const routes: Routes = [
   {path: 'internships/:internshipId/about', component: AboutInternshipComponent, canActivate: [AuthGuard] },
   { path: 'projects', loadChildren: () => import('./components/projects/project.module').then(m => m.ProjectModule), canActivate: [AuthGuard] },
   { path: 'contributions', loadChildren: () => import('./components/contributions/contribution.module').then(m => m.ContributionModule), canActivate: [AuthGuard] },
+  { path: 'priviliges', loadChildren: () => import('./components/privilige/privilige.module').then(m => m.PriviligeModule), canActivate: [AuthGuard] },
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'our-partners', component: OurPartnersComponent},
   {path: 'terms', component: TermsComponent},
-  {path: '**', component: DashboardComponent}
+  //{path: '**', component: DashboardComponent},
+  {path: '**', component: HomeComponent},
 ];
 
 @NgModule({

@@ -28,7 +28,7 @@ export class CreateComponent implements OnInit{
 
   ngOnInit(): void {
     this.addProject = this.fb.group({
-      title: new FormControl(null, Validators.required),
+      title: new FormControl(null, [Validators.required]),
       abstract: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
       country: new FormControl('', Validators.required),
@@ -66,5 +66,9 @@ export class CreateComponent implements OnInit{
     }
   }
 
+
+  getFormControl(name) {
+    return this.addProject.get(name);
+  }
 
 }
