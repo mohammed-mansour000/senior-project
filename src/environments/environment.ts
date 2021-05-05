@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl : "https://api-for-senior.herokuapp.com/",
+  
   firebaseConfig : {
     apiKey: "AIzaSyATTlWPvwMhXhrbtdzS3m8fODWxfIrGA6U",
     authDomain: "senior-21c82.firebaseapp.com",
@@ -14,6 +15,8 @@ export const environment = {
     appId: "1:307470081889:web:8cb3eb8eb540a6b0e1ef20",
     measurementId: "G-7LD23Y44BP"
   }
+  //Project Console: https://console.firebase.google.com/project/senior-21c82/overview
+  //Hosting URL: https://senior-21c82.web.app
 };
 
 /*

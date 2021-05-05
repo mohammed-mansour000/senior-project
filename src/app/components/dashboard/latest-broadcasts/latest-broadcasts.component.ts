@@ -31,22 +31,33 @@ export class LatestBroadcastsComponent implements OnInit {
   }
   
 
-
-
-  slides = [
-    {img: "http://placehold.it/350x150/000000"},
-    {img: "http://placehold.it/350x150/111111"},
-    {img: "http://placehold.it/350x150/333333"},
-    {img: "http://placehold.it/350x150/666666"}
-  ];
-
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,
     //dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 1500
+    autoplaySpeed: 1500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 985,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 765,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
 };
   //slideConfig = {autoplay: true, slidesToShow: 3, slidesToScroll: 1, speed:800, autoplaySpeed: 5000, cssEase: 'cubic-bezier(0.250,  0.060, 0.050, 0.040)'};
 
